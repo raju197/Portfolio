@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Raju Mandal — Java Full Stack Developer with 6+ years of experience in Spring Boot, Microservices, Angular, AWS and GCP. Available for new opportunities." />
+  <meta name="keywords" content="Raju Mandal, Java Full Stack Developer, Spring Boot, Microservices, Angular, AWS, GCP, Portfolio" />
+  <meta name="author" content="Raju Mandal" />
+  <meta property="og:title" content="Raju Mandal | Java Full Stack Developer" />
+  <meta property="og:description" content="Portfolio of Raju Mandal — Java Full Stack Developer with 6+ years of experience building secure, scalable, cloud-native enterprise applications." />
+  <meta property="og:type" content="website" />
+  <title>Raju Mandal | Java Full Stack Developer</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet" />
+
+  <!-- Google Analytics 4 -->
+  <!-- TODO: Replace G-XXXXXXXXXX with your actual Google Analytics Measurement ID -->
+  <!-- Get your ID at: https://analytics.google.com -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){ dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX');
+
+    // Track CV download as a GA4 event
+    function trackCVDownload() {
+      gtag('event', 'cv_download', {
+        event_category: 'engagement',
+        event_label: 'CV Downloaded'
+      });
+    }
+  </script>
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ===== NAVIGATION ===== -->
+  <header class="site-header" id="top">
+    <nav class="navbar" role="navigation" aria-label="Main navigation">
+      <a href="#top" class="nav-logo">RM<span class="dot">.</span></a>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#skills" class="nav-link">Skills</a></li>
+        <li><a href="#projects" class="nav-link">Projects</a></li>
+        <li><a href="#experience" class="nav-link">Experience</a></li>
+        <li><a href="#certifications" class="nav-link">Certifications</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+        <li>
+          <a href="assets/Raju_Mandal_CV.pdf"
+             class="btn-cv"
+             download="Raju_Mandal_CV.pdf"
+             onclick="trackCVDownload()"
+             aria-label="Download Raju Mandal's CV">
+            Download CV
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- ===== HERO ===== -->
+  <section class="hero" id="hero" aria-label="Introduction">
+    <div class="hero-content">
+      <p class="hero-greeting">Hello, I'm</p>
+      <h1 class="hero-name">Raju Mandal</h1>
+      <p class="hero-title">Java Full Stack Developer</p>
+      <p class="hero-tagline">
+        6+ years building secure, scalable, cloud-native enterprise applications
+        using Java, Spring Boot, Microservices, Angular, AWS &amp; GCP.
+      </p>
+      <div class="hero-actions">
+        <a href="#projects" class="btn btn-primary">View My Work</a>
+        <a href="#contact" class="btn btn-outline">Get in Touch</a>
+      </div>
+      <div class="hero-socials">
+        <a href="https://linkedin.com/in/raju-mandal" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn profile" class="social-link" id="heroLinkedinLink">
+          <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+        </a>
+        <a href="mailto:rajukumarmandal197@gmail.com" aria-label="Send email" class="social-link" id="heroEmailLink">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 7l10 7 10-7"/></svg>
+        </a>
+        <a href="tel:+918851210791" aria-label="Call Raju Mandal" class="social-link" id="heroPhoneLink">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.67A2 2 0 012 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+        </a>
+      </div>
+    </div>
+    <div class="hero-visual" aria-hidden="true">
+      <div class="avatar-ring">
+        <div class="avatar-initials">RM</div>
+      </div>
+      <div class="floating-badge badge-1">Spring Boot</div>
+      <div class="floating-badge badge-2">Angular</div>
+      <div class="floating-badge badge-3">Microservices</div>
+    </div>
+  </section>
+
+  <!-- ===== ABOUT ===== -->
+  <section class="section" id="about" aria-labelledby="about-heading">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title" id="about-heading">About Me</h2>
+        <div class="section-line"></div>
+      </div>
+      <div class="about-grid">
+        <div class="about-text">
+          <p>
+            I'm a Java Full Stack Developer with over 6 years of experience building
+            secure, scalable, cloud-native enterprise applications. My core expertise
+            spans Java 8/17, Spring Boot, Spring Cloud, and Angular — with a strong
+            grounding in Microservices architecture and event-driven systems.
+          </p>
+          <p>
+            I've built a low-code workflow and document-automation platform with LLM
+            (Gemini) integration, a healthcare data extraction system, and large-scale
+            background-verification services. I'm comfortable working end-to-end —
+            from API gateway design and Spring Security (JWT/OAuth 2.0) through to
+            polished Angular UIs.
+          </p>
+          <p>
+            Currently based in Faridabad, Haryana, I thrive in Agile/Scrum teams,
+            enjoy mentoring junior developers, and care deeply about clean code,
+            system design and reliable CI/CD delivery.
+          </p>
+          <a href="assets/Raju_Mandal_CV.pdf"
+             class="btn btn-primary mt-1"
+             download="Raju_Mandal_CV.pdf"
+             onclick="trackCVDownload()"
+             id="aboutCVBtn">
+            Download CV
+          </a>
+        </div>
+        <div class="about-stats">
+          <div class="stat-card">
+            <span class="stat-number" data-target="6">0</span>
+            <span class="stat-label">Years of Experience</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-number" data-target="4">0</span>
+            <span class="stat-label">Major Products Delivered</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-number" data-target="20">0</span>
+            <span class="stat-label">Technologies Used</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-number" data-target="3">0</span>
+            <span class="stat-label">Certifications Earned</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SKILLS ===== -->
+  <section class="section section-alt" id="skills" aria-labelledby="skills-heading">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title" id="skills-heading">Skills &amp; Technologies</h2>
+        <div class="section-line"></div>
+      </div>
+      <div class="skills-grid">
+
+        <div class="skill-group">
+          <h3 class="skill-group-title">Frontend</h3>
+          <div class="skill-tags">
+            <span class="skill-tag">Angular</span>
+            <span class="skill-tag">TypeScript</span>
+            <span class="skill-tag">JavaScript</span>
+            <span class="skill-tag">RxJS</span>
+            <span class="skill-tag">HTML5 &amp; CSS3</span>
+            <span class="skill-tag">Bootstrap</span>
+            <span class="skill-tag">Tailwind CSS</span>
+            <span class="skill-tag">Kendo UI</span>
+          </div>
+        </div>
+
+        <div class="skill-group">
+          <h3 class="skill-group-title">Backend</h3>
+          <div class="skill-tags">
+            <span class="skill-tag">Java 8 / Java 17</span>
+            <span class="skill-tag">Spring Boot</span>
+            <span class="skill-tag">Spring MVC</span>
+            <span class="skill-tag">Spring Cloud Gateway</span>
+            <span class="skill-tag">Spring Data JPA</span>
+            <span class="skill-tag">Hibernate</span>
+            <span class="skill-tag">Spring Security</span>
+            <span class="skill-tag">REST APIs</span>
+            <span class="skill-tag">Microservices</span>
+            <span class="skill-tag">Resilience4j</span>
+            <span class="skill-tag">WebSocket (STOMP)</span>
+            <span class="skill-tag">Maven &amp; Gradle</span>
+          </div>
+        </div>
+
+        <div class="skill-group">
+          <h3 class="skill-group-title">Databases &amp; Messaging</h3>
+          <div class="skill-tags">
+            <span class="skill-tag">PostgreSQL</span>
+            <span class="skill-tag">MongoDB</span>
+            <span class="skill-tag">MySQL</span>
+            <span class="skill-tag">MS SQL Server</span>
+            <span class="skill-tag">Redis</span>
+            <span class="skill-tag">GCP Pub/Sub</span>
+            <span class="skill-tag">Apache Kafka</span>
+            <span class="skill-tag">RabbitMQ</span>
+          </div>
+        </div>
+
+        <div class="skill-group">
+          <h3 class="skill-group-title">Cloud, DevOps &amp; Security</h3>
+          <div class="skill-tags">
+            <span class="skill-tag">AWS (EC2, S3, Lambda, RDS, SQS, EKS)</span>
+            <span class="skill-tag">GCP (Cloud Run, Pub/Sub, Cloud Storage)</span>
+            <span class="skill-tag">Docker</span>
+            <span class="skill-tag">Kubernetes</span>
+            <span class="skill-tag">CI/CD Pipelines</span>
+            <span class="skill-tag">JWT &amp; OAuth 2.0</span>
+            <span class="skill-tag">RBAC</span>
+            <span class="skill-tag">Git</span>
+            <span class="skill-tag">Postman / Swagger</span>
+            <span class="skill-tag">JUnit 5 &amp; Mockito</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PROJECTS ===== -->
+  <section class="section" id="projects" aria-labelledby="projects-heading">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title" id="projects-heading">Projects</h2>
+        <div class="section-line"></div>
+        <p class="section-subtitle">Key products and platforms I've designed and built in production.</p>
+      </div>
+      <div class="projects-grid">
+
+        <article class="project-card" id="project-1">
+          <div class="project-header">
+            <div class="project-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="28" height="28" aria-hidden="true"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+            </div>
+            <div class="project-links">
+              <span class="project-company-tag">Digivate Labs</span>
+            </div>
+          </div>
+          <h3 class="project-title">Anota — Low-Code Workflow &amp; Document Automation Platform</h3>
+          <p class="project-desc">
+            A use-case-agnostic, multi-tenant low-code platform where clients configure
+            their own workflow steps (upload → classification → extraction → rule validation → review).
+            Built on Java/Spring Boot microservices with an Angular builder UI. Features a
+            configurable rule engine, Gemini/LLM AI orchestration, GCP Pub/Sub event pipeline,
+            IAM with JWT + RBAC, Spring Cloud Gateway, and real-time WebSocket status updates.
+          </p>
+          <div class="project-tech">
+            <span>Java 17</span><span>Spring Boot</span><span>Spring Cloud Gateway</span>
+            <span>GCP Pub/Sub</span><span>Gemini API</span><span>Angular</span>
+            <span>PostgreSQL</span><span>MongoDB</span><span>Redis</span><span>Docker</span>
+          </div>
+        </article>
+
+        <article class="project-card" id="project-2">
+          <div class="project-header">
+            <div class="project-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="28" height="28" aria-hidden="true"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+            </div>
+            <div class="project-links">
+              <span class="project-company-tag">Digivate Labs</span>
+            </div>
+          </div>
+          <h3 class="project-title">Health Automation, Extraction &amp; Validation Platform</h3>
+          <p class="project-desc">
+            A healthcare document extraction and validation platform using LLM-based extraction
+            on unstructured clinical documents. Designed Spring Boot REST APIs for LLM-based
+            data extraction and persistence, implemented JWT-based authentication, built a
+            multi-level approval workflow with RBAC, and developed the Angular UI for
+            viewing, editing and validating extracted data.
+          </p>
+          <div class="project-tech">
+            <span>Java</span><span>Spring Boot</span><span>Spring Security</span>
+            <span>JWT</span><span>MongoDB</span><span>Angular</span>
+            <span>TypeScript</span><span>CI/CD</span>
+          </div>
+        </article>
+
+        <article class="project-card" id="project-3">
+          <div class="project-header">
+            <div class="project-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="28" height="28" aria-hidden="true"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/><line x1="12" y1="12" x2="12" y2="16"/><line x1="10" y1="14" x2="14" y2="14"/></svg>
+            </div>
+            <div class="project-links">
+              <span class="project-company-tag">Grid Infocom</span>
+            </div>
+          </div>
+          <h3 class="project-title">Peregrine — Background Verification Platform</h3>
+          <p class="project-desc">
+            Enterprise-grade background-verification application for First Advantage (USA).
+            Developed the Angular frontend, integrated REST and SOAP APIs, and built Spring
+            Boot microservices with PostgreSQL for high-concurrency verification workflows.
+            Implemented OAuth 2.0 &amp; JWT for secure inter-service communication and integrated
+            Apache Kafka and RabbitMQ for asynchronous message processing.
+          </p>
+          <div class="project-tech">
+            <span>Angular</span><span>Spring Boot</span><span>Spring Data JPA</span>
+            <span>PostgreSQL</span><span>OAuth 2.0</span><span>Kafka</span><span>RabbitMQ</span>
+          </div>
+        </article>
+
+        <article class="project-card" id="project-4">
+          <div class="project-header">
+            <div class="project-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="28" height="28" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+            </div>
+            <div class="project-links">
+              <span class="project-company-tag">Digivate Labs</span>
+            </div>
+          </div>
+          <h3 class="project-title">API Gateway &amp; IAM — Multi-Tenant Security Layer</h3>
+          <p class="project-desc">
+            Designed and built the central Spring Cloud Gateway through which all microservice
+            APIs are routed, with global filters for authentication and protection against XSS
+            and SQL injection. Implemented IAM using Spring Security with JWT access &amp; refresh
+            tokens carrying tenant ID, use-case and role claims — enabling true multi-tenant
+            isolation and fine-grained RBAC across all downstream services.
+          </p>
+          <div class="project-tech">
+            <span>Spring Cloud Gateway</span><span>Spring Security</span><span>JWT</span>
+            <span>OAuth 2.0</span><span>RBAC</span><span>BCrypt</span><span>Java 17</span>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== EXPERIENCE ===== -->
+  <section class="section section-alt" id="experience" aria-labelledby="experience-heading">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title" id="experience-heading">Experience</h2>
+        <div class="section-line"></div>
+      </div>
+      <div class="timeline">
+
+        <div class="timeline-item" id="exp-1">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <div class="timeline-meta">
+              <span class="timeline-date">Mar 2024 — Sep 2026</span>
+              <span class="timeline-badge">Full-time</span>
+            </div>
+            <h3 class="timeline-role">Technical Consultant</h3>
+            <p class="timeline-company">Digivate Labs Pvt Ltd · Gurgaon</p>
+            <ul class="timeline-points">
+              <li>Built Spring Boot microservices for a configurable workflow engine delivering the end-to-end health-insurance claim flow: multi-mode upload, document classification, OCR extraction, human correction, multi-level review and PDF settlement-letter generation.</li>
+              <li>Re-architected the event pipeline from MongoDB Change Streams to GCP Pub/Sub using Spring Cloud GCP; built the Relay and Mapper services for auto-provisioning topics per workflow step.</li>
+              <li>Developed the API-Facade AI orchestration service calling Google Gemini and in-house LLM/ML APIs, with Resilience4j retry, circuit breaker and timeouts using the Strategy pattern.</li>
+              <li>Solved distributed consistency with a Transactional Outbox pattern and idempotent consumers, ensuring no workflow step was lost or processed twice after moving to Pub/Sub.</li>
+              <li>Migrated transactional data from MongoDB to PostgreSQL using Spring Data JPA/Hibernate to enforce schema, reduce cost and cut connection load from change streams.</li>
+              <li>Implemented IAM with Spring Security: JWT access and refresh tokens carrying tenant ID, use-case and role claims for multi-tenant isolation and RBAC in every downstream service.</li>
+              <li>Built the Angular UI Builder with drag-and-drop pages and a JSON Mapper library; migrated services from GCP VMs to Cloud Run with Docker and CI/CD pipelines; added Redis caching.</li>
+              <li>Acted as senior developer — broke features into Jira tickets, assigned work and reviewed pull requests for new joiners; wrote unit tests with JUnit 5, Mockito and Jasmine/Karma.</li>
+            </ul>
+            <p class="timeline-stack"><strong>Stack:</strong> Java 17, Spring Boot, Spring Cloud Gateway, Spring Security, GCP Pub/Sub, Resilience4j, PostgreSQL, MongoDB, Redis, Gemini API, Angular, Docker, Cloud Run, JUnit 5</p>
+          </div>
+        </div>
+
+        <div class="timeline-item" id="exp-2">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <div class="timeline-meta">
+              <span class="timeline-date">Feb 2019 — Mar 2024</span>
+              <span class="timeline-badge">Full-time</span>
+            </div>
+            <h3 class="timeline-role">Associate Technical Consultant</h3>
+            <p class="timeline-company">Grid Infocom Pvt Ltd · Gurgaon</p>
+            <ul class="timeline-points">
+              <li>Developed an enterprise Angular application for background-verification services for US-based client First Advantage, integrating REST and SOAP APIs and improving mobile responsiveness.</li>
+              <li>Built Spring Boot microservices with Spring Data JPA and PostgreSQL for high-concurrency background-verification workflows.</li>
+              <li>Implemented OAuth 2.0 and JWT for secure inter-service communication across all services.</li>
+              <li>Integrated Apache Kafka and RabbitMQ for asynchronous message processing between services, improving throughput and decoupling.</li>
+              <li>Supported production issues and enhancements, ensuring high system reliability and timely delivery.</li>
+            </ul>
+            <p class="timeline-stack"><strong>Stack:</strong> Angular, TypeScript, Java, Spring Boot, Spring Data JPA, PostgreSQL, OAuth 2.0, JWT, Kafka, RabbitMQ</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CERTIFICATIONS ===== -->
+  <section class="section" id="certifications" aria-labelledby="certs-heading">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title" id="certs-heading">Certifications &amp; Education</h2>
+        <div class="section-line"></div>
+      </div>
+      <div class="certs-grid">
+
+        <div class="cert-card" id="cert-1">
+          <div class="cert-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="28" height="28" aria-hidden="true"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11"/></svg>
+          </div>
+          <div class="cert-info">
+            <h3 class="cert-title">Java Certification</h3>
+            <p class="cert-issuer">Aricent &amp; NASSCOM</p>
+          </div>
+          <span class="cert-link cert-badge">Certified</span>
+        </div>
+
+        <div class="cert-card" id="cert-2">
+          <div class="cert-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="28" height="28" aria-hidden="true"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11"/></svg>
+          </div>
+          <div class="cert-info">
+            <h3 class="cert-title">Angular, JavaScript &amp; CSS</h3>
+            <p class="cert-issuer">Udemy</p>
+          </div>
+          <span class="cert-link cert-badge">Certified</span>
+        </div>
+
+        <div class="cert-card" id="cert-3">
+          <div class="cert-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="28" height="28" aria-hidden="true"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11"/></svg>
+          </div>
+          <div class="cert-info">
+            <h3 class="cert-title">MongoDB M001</h3>
+            <p class="cert-issuer">MongoDB University</p>
+          </div>
+          <span class="cert-link cert-badge">Certified</span>
+        </div>
+
+        <!-- Education card -->
+        <div class="cert-card cert-education" id="cert-edu">
+          <div class="cert-icon cert-icon-edu">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="28" height="28" aria-hidden="true"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c0 2.21 2.686 4 6 4s6-1.79 6-4v-5"/></svg>
+          </div>
+          <div class="cert-info">
+            <h3 class="cert-title">B.Tech in Computer Science</h3>
+            <p class="cert-issuer">IPU Delhi &nbsp;·&nbsp; 2014 – 2018 &nbsp;·&nbsp; 74%</p>
+          </div>
+          <span class="cert-link cert-badge cert-badge-edu">Degree</span>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CONTACT ===== -->
+  <section class="section section-alt" id="contact" aria-labelledby="contact-heading">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title" id="contact-heading">Get in Touch</h2>
+        <div class="section-line"></div>
+        <p class="section-subtitle">
+          I'm currently open to new opportunities. Whether you have a role in mind,
+          a project to discuss, or just want to connect — feel free to reach out.
+        </p>
+      </div>
+      <div class="contact-layout">
+        <div class="contact-info">
+          <div class="contact-item" id="contact-email">
+            <div class="contact-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 7l10 7 10-7"/></svg>
+            </div>
+            <div>
+              <p class="contact-label">Email</p>
+              <a href="mailto:rajukumarmandal197@gmail.com" class="contact-value">rajukumarmandal197@gmail.com</a>
+            </div>
+          </div>
+          <div class="contact-item" id="contact-phone">
+            <div class="contact-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.67A2 2 0 012 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+            </div>
+            <div>
+              <p class="contact-label">Phone</p>
+              <a href="tel:+918851210791" class="contact-value">+91 88512 10791</a>
+            </div>
+          </div>
+          <div class="contact-item" id="contact-location">
+            <div class="contact-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            </div>
+            <div>
+              <p class="contact-label">Location</p>
+              <p class="contact-value">Faridabad, Haryana, India</p>
+            </div>
+          </div>
+          <div class="contact-item" id="contact-availability">
+            <div class="contact-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            </div>
+            <div>
+              <p class="contact-label">Status</p>
+              <p class="contact-value available">Open to opportunities</p>
+            </div>
+          </div>
+          <div class="contact-socials">
+            <a href="https://linkedin.com/in/raju-mandal" target="_blank" rel="noopener noreferrer" class="contact-social-btn" id="contactLinkedIn" aria-label="LinkedIn">LinkedIn</a>
+          </div>
+        </div>
+        <form class="contact-form" id="contactForm" novalidate>
+          <div class="form-group">
+            <label for="contactName">Name</label>
+            <input type="text" id="contactName" name="name" placeholder="Your name" required autocomplete="name" />
+          </div>
+          <div class="form-group">
+            <label for="contactEmail">Email</label>
+            <input type="email" id="contactEmail" name="email" placeholder="your@email.com" required autocomplete="email" />
+          </div>
+          <div class="form-group">
+            <label for="contactMessage">Message</label>
+            <textarea id="contactMessage" name="message" rows="5" placeholder="Tell me about the role or project…" required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary btn-full" id="contactSubmitBtn">Send Message</button>
+          <p class="form-note">
+            This will open your email client with a pre-filled message.
+            Alternatively, email me directly at
+            <a href="mailto:rajukumarmandal197@gmail.com">rajukumarmandal197@gmail.com</a>.
+          </p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p class="footer-copy">
+        &copy; <span id="footerYear"></span> Raju Mandal. Built with care, hosted on GitHub Pages.
+      </p>
+      <div class="footer-links">
+        <a href="https://linkedin.com/in/raju-mandal" target="_blank" rel="noopener noreferrer" id="footerLinkedIn">LinkedIn</a>
+        <a href="mailto:rajukumarmandal197@gmail.com" id="footerEmail">Email</a>
+        <a href="assets/Raju_Mandal_CV.pdf" download="Raju_Mandal_CV.pdf" onclick="trackCVDownload()" id="footerCVLink">CV / Résumé</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>
