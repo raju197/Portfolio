@@ -26,7 +26,6 @@
     gtag('js', new Date());
     gtag('config', 'G-XXXXXXXXXX');
 
-    // Track CV download as a GA4 event
     function trackCVDownload() {
       gtag('event', 'cv_download', {
         event_category: 'engagement',
@@ -145,8 +144,8 @@
             <span class="stat-label">Years of Experience</span>
           </div>
           <div class="stat-card">
-            <span class="stat-number" data-target="4">0</span>
-            <span class="stat-label">Major Products Delivered</span>
+            <span class="stat-number" data-target="7">0</span>
+            <span class="stat-label">Projects Delivered</span>
           </div>
           <div class="stat-card">
             <span class="stat-number" data-target="20">0</span>
@@ -196,6 +195,7 @@
             <span class="skill-tag">Spring Security</span>
             <span class="skill-tag">REST APIs</span>
             <span class="skill-tag">Microservices</span>
+            <span class="skill-tag">Node.js</span>
             <span class="skill-tag">Resilience4j</span>
             <span class="skill-tag">WebSocket (STOMP)</span>
             <span class="skill-tag">Maven &amp; Gradle</span>
@@ -211,8 +211,10 @@
             <span class="skill-tag">MS SQL Server</span>
             <span class="skill-tag">Redis</span>
             <span class="skill-tag">GCP Pub/Sub</span>
-            <span class="skill-tag">Apache Kafka</span>
+            <span class="skill-tag">Apache Kafka (Avro)</span>
             <span class="skill-tag">RabbitMQ</span>
+            <span class="skill-tag">Supabase</span>
+            <span class="skill-tag">Upstash</span>
           </div>
         </div>
 
@@ -226,6 +228,8 @@
             <span class="skill-tag">CI/CD Pipelines</span>
             <span class="skill-tag">JWT &amp; OAuth 2.0</span>
             <span class="skill-tag">RBAC</span>
+            <span class="skill-tag">Rate Limiting</span>
+            <span class="skill-tag">Circuit Breaker / DLQ</span>
             <span class="skill-tag">Git</span>
             <span class="skill-tag">Postman / Swagger</span>
             <span class="skill-tag">JUnit 5 &amp; Mockito</span>
@@ -242,16 +246,126 @@
       <div class="section-header">
         <h2 class="section-title" id="projects-heading">Projects</h2>
         <div class="section-line"></div>
-        <p class="section-subtitle">Key products and platforms I've designed and built in production.</p>
+        <p class="section-subtitle">Personal builds and professional products — a full view of my work.</p>
       </div>
-      <div class="projects-grid">
 
-        <article class="project-card" id="project-1">
+      <!-- Project Filter Tabs -->
+      <div class="project-filters" role="tablist" aria-label="Filter projects by category">
+        <button class="filter-btn active" data-filter="all" id="filter-all" role="tab" aria-selected="true">All Projects</button>
+        <button class="filter-btn" data-filter="personal" id="filter-personal" role="tab" aria-selected="false">Personal Projects</button>
+        <button class="filter-btn" data-filter="professional" id="filter-professional" role="tab" aria-selected="false">Professional Work</button>
+      </div>
+
+      <div class="projects-grid" id="projectsGrid">
+
+        <!-- ========== PERSONAL PROJECT 1 ========== -->
+        <article class="project-card" id="project-zenStudy" data-category="personal">
+          <div class="project-header">
+            <div class="project-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="28" height="28" aria-hidden="true"><path d="M12 2a7 7 0 017 7c0 3.5-2 6-4 8l-3 3-3-3c-2-2-4-4.5-4-8a7 7 0 017-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
+            </div>
+            <div class="project-links">
+              <span class="project-type-badge personal-badge">Personal</span>
+            </div>
+          </div>
+          <h3 class="project-title">ZenStudy — Student Productivity &amp; Wellness Tracker</h3>
+          <p class="project-desc">
+            An all-in-one personal tracker built for students who want to balance productivity
+            with mindfulness. Features guided breathing exercises and meditation sessions to
+            reduce study stress. Students can log daily study hours, set monthly goals and
+            track completion, maintain expense records with category-wise monthly breakdowns,
+            and write quick notes — all reviewed in a clean end-of-month summary dashboard
+            showing what went well, where money was spent, and whether targets were hit.
+          </p>
+          <div class="project-highlights">
+            <span class="highlight-pill">🧘 Breathing Exercises</span>
+            <span class="highlight-pill">📚 Study Goal Tracker</span>
+            <span class="highlight-pill">💸 Expense Monitor</span>
+            <span class="highlight-pill">📝 Notes</span>
+            <span class="highlight-pill">📊 Monthly Review</span>
+          </div>
+          <div class="project-tech">
+            <span>HTML5</span><span>CSS3</span><span>JavaScript</span>
+          </div>
+        </article>
+
+        <!-- ========== PERSONAL PROJECT 2 ========== -->
+        <article class="project-card" id="project-revisionHub" data-category="personal">
+          <div class="project-header">
+            <div class="project-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="28" height="28" aria-hidden="true"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+            </div>
+            <div class="project-links">
+              <span class="project-type-badge personal-badge">Personal</span>
+            </div>
+          </div>
+          <h3 class="project-title">RevisionHub — DSA &amp; Knowledge Revision Platform</h3>
+          <p class="project-desc">
+            Built for the AI era where learning content lives in Markdown. A personal
+            knowledge base for DSA and technical revision — save each problem with its
+            solution, explanation, key learnings and takeaways. When free time opens up,
+            the app surfaces cards for active recall. During each revision session you can
+            annotate and update your notes inline, so your understanding evolves with every pass.
+            Backed by a Node.js REST API and MongoDB for flexible document storage.
+          </p>
+          <div class="project-highlights">
+            <span class="highlight-pill">📄 Markdown Support</span>
+            <span class="highlight-pill">🔁 Active Revision Mode</span>
+            <span class="highlight-pill">🧠 DSA Problem Store</span>
+            <span class="highlight-pill">✏️ Inline Notes &amp; Updates</span>
+          </div>
+          <div class="project-tech">
+            <span>Node.js</span><span>Express</span><span>MongoDB</span><span>Markdown</span>
+          </div>
+        </article>
+
+        <!-- ========== PERSONAL PROJECT 3 ========== -->
+        <article class="project-card project-card-featured" id="project-cloudNative" data-category="personal">
+          <div class="project-header">
+            <div class="project-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="28" height="28" aria-hidden="true"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg>
+            </div>
+            <div class="project-links">
+              <span class="project-type-badge personal-badge">Personal</span>
+              <span class="project-type-badge wip-badge">In Progress</span>
+            </div>
+          </div>
+          <h3 class="project-title">CloudNative POC — Full-Stack Distributed Microservices on AWS &amp; GCP</h3>
+          <p class="project-desc">
+            A completely working, zero-cost cloud-native reference application where every
+            distributed-systems concept is hands-on and revisable. Angular frontend, multiple
+            Spring Boot microservices, Supabase (managed PostgreSQL), Upstash (serverless Redis),
+            Kafka with Avro serialisation for event streaming, rate limiting, Resilience4j circuit
+            breaker with proper fallback methods, and Dead Letter Queue (DLQ) for guaranteed
+            message processing. Deployed on AWS EC2 t3.micro and GCP Cloud Run — all at
+            zero cost. Planned next phase: Saga pattern for distributed transaction management
+            across services.
+          </p>
+          <div class="project-highlights">
+            <span class="highlight-pill">☁️ AWS EC2 t3.micro</span>
+            <span class="highlight-pill">🚀 GCP Cloud Run</span>
+            <span class="highlight-pill">📨 Kafka + Avro</span>
+            <span class="highlight-pill">🔁 Circuit Breaker</span>
+            <span class="highlight-pill">📬 DLQ</span>
+            <span class="highlight-pill">🚦 Rate Limiting</span>
+            <span class="highlight-pill">🗄️ Supabase</span>
+            <span class="highlight-pill">⚡ Upstash Redis</span>
+          </div>
+          <div class="project-tech">
+            <span>Angular</span><span>Spring Boot</span><span>Kafka (Avro)</span>
+            <span>Supabase</span><span>Upstash Redis</span><span>Resilience4j</span>
+            <span>AWS EC2</span><span>GCP Cloud Run</span><span>Docker</span>
+          </div>
+        </article>
+
+        <!-- ========== PROFESSIONAL PROJECT 1 ========== -->
+        <article class="project-card" id="project-anota" data-category="professional">
           <div class="project-header">
             <div class="project-icon">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="28" height="28" aria-hidden="true"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
             </div>
             <div class="project-links">
+              <span class="project-type-badge professional-badge">Professional</span>
               <span class="project-company-tag">Digivate Labs</span>
             </div>
           </div>
@@ -270,12 +384,14 @@
           </div>
         </article>
 
-        <article class="project-card" id="project-2">
+        <!-- ========== PROFESSIONAL PROJECT 2 ========== -->
+        <article class="project-card" id="project-healthcare" data-category="professional">
           <div class="project-header">
             <div class="project-icon">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="28" height="28" aria-hidden="true"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
             </div>
             <div class="project-links">
+              <span class="project-type-badge professional-badge">Professional</span>
               <span class="project-company-tag">Digivate Labs</span>
             </div>
           </div>
@@ -294,12 +410,14 @@
           </div>
         </article>
 
-        <article class="project-card" id="project-3">
+        <!-- ========== PROFESSIONAL PROJECT 3 ========== -->
+        <article class="project-card" id="project-peregrine" data-category="professional">
           <div class="project-header">
             <div class="project-icon">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="28" height="28" aria-hidden="true"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/><line x1="12" y1="12" x2="12" y2="16"/><line x1="10" y1="14" x2="14" y2="14"/></svg>
             </div>
             <div class="project-links">
+              <span class="project-type-badge professional-badge">Professional</span>
               <span class="project-company-tag">Grid Infocom</span>
             </div>
           </div>
@@ -317,12 +435,14 @@
           </div>
         </article>
 
-        <article class="project-card" id="project-4">
+        <!-- ========== PROFESSIONAL PROJECT 4 ========== -->
+        <article class="project-card" id="project-iam" data-category="professional">
           <div class="project-header">
             <div class="project-icon">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="28" height="28" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
             </div>
             <div class="project-links">
+              <span class="project-type-badge professional-badge">Professional</span>
               <span class="project-company-tag">Digivate Labs</span>
             </div>
           </div>
@@ -340,7 +460,7 @@
           </div>
         </article>
 
-      </div>
+      </div><!-- /projects-grid -->
     </div>
   </section>
 
@@ -442,7 +562,6 @@
           <span class="cert-link cert-badge">Certified</span>
         </div>
 
-        <!-- Education card -->
         <div class="cert-card cert-education" id="cert-edu">
           <div class="cert-icon cert-icon-edu">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="28" height="28" aria-hidden="true"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c0 2.21 2.686 4 6 4s6-1.79 6-4v-5"/></svg>
