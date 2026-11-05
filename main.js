@@ -5,6 +5,7 @@
    - Active nav link highlight on scroll
    - Scroll-reveal for sections
    - Animated counting numbers
+   - Project category filter (All / Personal / Professional)
    - Contact form → mailto handler
    - Footer year auto-update
    ======================================================== */
@@ -176,8 +177,67 @@
   }
 
   /* ======================================================
-     8. SMOOTH SCROLL POLYFILL (for older Safari)
+     8. PROJECT CATEGORY FILTER
      ====================================================== */
+  const filterBtns  = qsa('.filter-btn');
+  const projectGrid = qs('#projectsGrid');
+
+  if (filterBtns.length && projectGrid) {
+
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+
+        // --- Update active button state ---
+        filterBtns.forEach(b => {
+          b.classList.remove('active');
+          b.setAttribute('aria-selected', 'false');
+        });
+        btn.classList.add('active');
+        btn.setAttribute('aria-selected', 'true');
+
+        const filter = btn.dataset.filter; // 'all' | 'personal' | 'professional'
+        const cards  = qsa('.project-card', projectGrid);
+
+        cards.forEach(card => {
+          const category = card.dataset.category; // 'personal' | 'professional'
+
+          if (filter === 'all' || category === filter) {
+            // Show card — remove hidden, re-trigger reveal animation
+            card.classList.remove('hidden');
+            // Small delay so the grid reflows before animating in
+            requestAnimationFrame(() => {
+              card.style.opacity = '1';
+              card.style.transform = 'translateY(0)';
+            });
+          } else {
+            // Hide card
+            card.classList.add('hidden');
+          }
+        });
+
+        // Show a friendly message if no cards are visible
+        let emptyMsg = qs('#projectsEmptyMsg');
+        const visibleCards = cards.filter(c => !c.classList.contains('hidden'));
+
+        if (visibleCards.length === 0) {
+          if (!emptyMsg) {
+            emptyMsg = document.createElement('p');
+            emptyMsg.id = 'projectsEmptyMsg';
+            emptyMsg.style.cssText = 'text-align:center;color:var(--text-muted);padding:2rem 0;grid-column:1/-1;';
+            emptyMsg.textContent = 'No projects in this category yet.';
+            projectGrid.appendChild(emptyMsg);
+          }
+        } else {
+          if (emptyMsg) emptyMsg.remove();
+        }
+      });
+    });
+  }
+
+  /* ======================================================
+     9. SMOOTH SCROLL POLYFILL (for older Safari)
+     ====================================================== */
+
   qsa('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', (e) => {
       const target = qs(anchor.getAttribute('href'));

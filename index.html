@@ -19,12 +19,12 @@
   <!-- Google Analytics 4 -->
   <!-- TODO: Replace G-XXXXXXXXXX with your actual Google Analytics Measurement ID -->
   <!-- Get your ID at: https://analytics.google.com -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-7RCJS0CECR"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){ dataLayer.push(arguments); }
     gtag('js', new Date());
-    gtag('config', 'G-XXXXXXXXXX');
+    gtag('config', 'G-7RCJS0CECR');
 
     function trackCVDownload() {
       gtag('event', 'cv_download', {
@@ -94,12 +94,23 @@
       </div>
     </div>
     <div class="hero-visual" aria-hidden="true">
-      <div class="avatar-ring">
-        <div class="avatar-initials">RM</div>
+      <!-- Place your photo at assets/profile.jpg — it will appear here automatically -->
+      <div class="avatar-photo-wrap">
+        <img
+          src="assets/profile.jpg"
+          alt="Raju Mandal — Java Full Stack Developer"
+          class="avatar-photo"
+          id="profilePhoto"
+          onerror="this.style.display='none'; document.getElementById('avatarFallback').style.display='flex';"
+        />
+        <div class="avatar-ring" id="avatarFallback" style="display:none">
+          <div class="avatar-initials">RM</div>
+        </div>
       </div>
       <div class="floating-badge badge-1">Spring Boot</div>
       <div class="floating-badge badge-2">Angular</div>
       <div class="floating-badge badge-3">Microservices</div>
+      <div class="floating-badge badge-4">AWS &amp; GCP</div>
     </div>
   </section>
 
@@ -186,7 +197,7 @@
         <div class="skill-group">
           <h3 class="skill-group-title">Backend</h3>
           <div class="skill-tags">
-            <span class="skill-tag">Java 8 / Java 17</span>
+            <span class="skill-tag">Java 8 / Java 11 / Java 17</span>
             <span class="skill-tag">Spring Boot</span>
             <span class="skill-tag">Spring MVC</span>
             <span class="skill-tag">Spring Cloud Gateway</span>
@@ -215,14 +226,39 @@
             <span class="skill-tag">RabbitMQ</span>
             <span class="skill-tag">Supabase</span>
             <span class="skill-tag">Upstash</span>
+            <span class="skill-tag">SQL Query Optimisation</span>
           </div>
         </div>
 
         <div class="skill-group">
-          <h3 class="skill-group-title">Cloud, DevOps &amp; Security</h3>
+          <h3 class="skill-group-title">Cloud — AWS</h3>
           <div class="skill-tags">
-            <span class="skill-tag">AWS (EC2, S3, Lambda, RDS, SQS, EKS)</span>
-            <span class="skill-tag">GCP (Cloud Run, Pub/Sub, Cloud Storage)</span>
+            <span class="skill-tag">EC2 (t3.micro)</span>
+            <span class="skill-tag">S3</span>
+            <span class="skill-tag">Lambda</span>
+            <span class="skill-tag">RDS</span>
+            <span class="skill-tag">SQS / SNS</span>
+            <span class="skill-tag">EKS</span>
+            <span class="skill-tag">CloudWatch</span>
+            <span class="skill-tag">IAM</span>
+          </div>
+        </div>
+
+        <div class="skill-group">
+          <h3 class="skill-group-title">Cloud — GCP</h3>
+          <div class="skill-tags">
+            <span class="skill-tag">Cloud Run</span>
+            <span class="skill-tag">Pub/Sub</span>
+            <span class="skill-tag">Cloud Storage</span>
+            <span class="skill-tag">Cloud Logging</span>
+            <span class="skill-tag">Cloud Monitoring</span>
+            <span class="skill-tag">GCP VM Instances</span>
+          </div>
+        </div>
+
+        <div class="skill-group">
+          <h3 class="skill-group-title">DevOps &amp; Security</h3>
+          <div class="skill-tags">
             <span class="skill-tag">Docker</span>
             <span class="skill-tag">Kubernetes</span>
             <span class="skill-tag">CI/CD Pipelines</span>
@@ -233,6 +269,22 @@
             <span class="skill-tag">Git</span>
             <span class="skill-tag">Postman / Swagger</span>
             <span class="skill-tag">JUnit 5 &amp; Mockito</span>
+          </div>
+        </div>
+
+        <div class="skill-group">
+          <h3 class="skill-group-title">Concepts &amp; Methodology</h3>
+          <div class="skill-tags">
+            <span class="skill-tag">System Design</span>
+            <span class="skill-tag">DSA</span>
+            <span class="skill-tag">SOLID Principles</span>
+            <span class="skill-tag">Design Patterns</span>
+            <span class="skill-tag">Clean Code</span>
+            <span class="skill-tag">Agile / Scrum</span>
+            <span class="skill-tag">Event-Driven Architecture</span>
+            <span class="skill-tag">Saga Pattern</span>
+            <span class="skill-tag">Transactional Outbox</span>
+            <span class="skill-tag">Multi-Tenant SaaS</span>
           </div>
         </div>
 
@@ -529,6 +581,7 @@
       </div>
       <div class="certs-grid">
 
+        <!-- Existing certifications from CV -->
         <div class="cert-card" id="cert-1">
           <div class="cert-icon">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="28" height="28" aria-hidden="true"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11"/></svg>
@@ -560,6 +613,44 @@
             <p class="cert-issuer">MongoDB University</p>
           </div>
           <span class="cert-link cert-badge">Certified</span>
+        </div>
+
+        <!-- New Udemy certifications — update names as needed -->
+        <div class="cert-card" id="cert-udemy-1">
+          <div class="cert-icon cert-icon-udemy">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="28" height="28" aria-hidden="true"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11"/></svg>
+          </div>
+          <div class="cert-info">
+            <!-- TODO: Replace with your actual Udemy course name -->
+            <h3 class="cert-title">Udemy Certification #1</h3>
+            <p class="cert-issuer">Udemy</p>
+          </div>
+          <span class="cert-link cert-badge cert-badge-udemy">Udemy</span>
+        </div>
+
+        <div class="cert-card" id="cert-udemy-2">
+          <div class="cert-icon cert-icon-udemy">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="28" height="28" aria-hidden="true"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11"/></svg>
+          </div>
+          <div class="cert-info">
+            <!-- TODO: Replace with your actual Udemy course name -->
+            <h3 class="cert-title">Udemy Certification #2</h3>
+            <p class="cert-issuer">Udemy</p>
+          </div>
+          <span class="cert-link cert-badge cert-badge-udemy">Udemy</span>
+        </div>
+
+        <!-- LearnCode certification -->
+        <div class="cert-card" id="cert-learncode">
+          <div class="cert-icon cert-icon-learncode">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="28" height="28" aria-hidden="true"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+          </div>
+          <div class="cert-info">
+            <!-- TODO: Replace with your actual LearnCode course name -->
+            <h3 class="cert-title">LearnCode Certification</h3>
+            <p class="cert-issuer">LearnCode</p>
+          </div>
+          <span class="cert-link cert-badge cert-badge-learncode">LearnCode</span>
         </div>
 
         <div class="cert-card cert-education" id="cert-edu">
