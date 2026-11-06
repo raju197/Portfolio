@@ -171,6 +171,14 @@
         `Hi Raju,\n\nMy name is ${name} and my email is ${email}.\n\n${message}\n\nBest,\n${name}`
       );
 
+      // Visual feedback on button
+      const submitBtn = qs('#contactSubmitBtn');
+      if (submitBtn) {
+        const origText = submitBtn.textContent;
+        submitBtn.textContent = 'Opening Email Client…';
+        setTimeout(() => { submitBtn.textContent = origText; }, 3500);
+      }
+
       // Opens the user's email client with pre-filled message
       window.location.href = `mailto:rajukumarmandal197@gmail.com?subject=${subject}&body=${body}`;
     });
