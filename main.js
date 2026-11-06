@@ -18,6 +18,27 @@
   const qsa = (sel, ctx = document) => Array.from(ctx.querySelectorAll(sel));
 
   /* ======================================================
+     0. THEME TOGGLE (Dark / Light Mode)
+     ====================================================== */
+  const themeToggle = qs('#themeToggle');
+  if (themeToggle) {
+    themeToggle.addEventListener('click', () => {
+      const active = document.documentElement.getAttribute('data-theme');
+      const nextTheme = active === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', nextTheme);
+      localStorage.setItem('theme', nextTheme);
+    });
+  }
+
+  if (window.matchMedia) {
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
+      if (!localStorage.getItem('theme')) {
+        document.documentElement.setAttribute('data-theme', e.matches ? 'dark' : 'light');
+      }
+    });
+  }
+
+  /* ======================================================
      1. FOOTER YEAR
      ====================================================== */
   const yearEl = qs('#footerYear');
@@ -44,7 +65,7 @@
   });
 
   // Close menu when a nav link is clicked
-  qsa('.nav-link', navLinks).forEach(link => {
+  qsa('.nav-link, .btn-cv', navLinks).forEach(link => {
     link.addEventListener('click', () => {
       navLinks.classList.remove('open');
       toggle.classList.remove('open');
@@ -122,6 +143,7 @@
      ====================================================== */
   function animateCount(el) {
     const target = parseInt(el.dataset.target, 10);
+    const suffix = el.dataset.suffix || '';
     const duration = 1400;
     const start = performance.now();
 
@@ -130,7 +152,8 @@
       const progress = Math.min(elapsed / duration, 1);
       // Ease out cubic
       const eased = 1 - Math.pow(1 - progress, 3);
-      el.textContent = Math.round(eased * target);
+      const val = Math.round(eased * target);
+      el.textContent = val + (progress >= 1 ? suffix : '');
       if (progress < 1) requestAnimationFrame(update);
     }
 
@@ -256,5 +279,57 @@
       window.scrollTo({ top, behavior: 'smooth' });
     });
   });
+
+  /* ======================================================
+     10. COPY TO CLIPBOARD
+     ====================================================== */
+  qsa('.btn-copy').forEach(btn => {
+    btn.addEventListener('click', async () => {
+      const textToCopy = btn.dataset.copy;
+      if (!textToCopy) return;
+
+      const markCopied = () => {
+        btn.classList.add('copied');
+        setTimeout(() => {
+          btn.classList.remove('copied');
+        }, 2000);
+      };
+
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        try {
+          await navigator.clipboard.writeText(textToCopy);
+          markCopied();
+          return;
+        } catch (_) {}
+      }
+
+      // Fallback
+      const ta = document.createElement('textarea');
+      ta.value = textToCopy;
+      ta.style.position = 'fixed';
+      ta.style.opacity = '0';
+      document.body.appendChild(ta);
+      ta.select();
+      try {
+        document.execCommand('copy');
+        markCopied();
+      } catch (_) {}
+      document.body.removeChild(ta);
+    });
+  });
+
+  /* ======================================================
+     11. BACK TO TOP BUTTON
+     ====================================================== */
+  const backToTopBtn = qs('#backToTop');
+  if (backToTopBtn) {
+    window.addEventListener('scroll', () => {
+      backToTopBtn.classList.toggle('visible', window.scrollY > 400);
+    }, { passive: true });
+
+    backToTopBtn.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  }
 
 })();
